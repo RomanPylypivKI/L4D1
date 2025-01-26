@@ -17,10 +17,12 @@
 # Обов'язково в функції sum_lower_than викликайте get_unqiue_numbers це і є суть завдання!!!
 # Також не забудь будь ласка за Аннотації типів)
 
-def get_unqiue_numbers(ls1, ls2):
+import sys # нормально невідображались літери з кирилиці
+sys.stdout.reconfigure(encoding='utf-8') # тому додав дані рядки
+
+def get_unqiue_numbers(ls1: list, ls2: list) -> list:
     ls1 += [num for num in ls2 if num not in ls1]
     return ls1
 
-def sum_lower_than(ls1, ls2, not_more):
+def sum_lower_than(ls1: list, ls2: list, not_more: int) -> list:
     return [num for num in get_unqiue_numbers(ls1, ls2) if num <= not_more]
-
